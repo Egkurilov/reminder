@@ -19,7 +19,7 @@ class Message:
 
     @property
     def from_id(self):
-        return self._data['message_id']
+        return self._data['message']['message_id']
 
     @property
     def is_bot(self):
