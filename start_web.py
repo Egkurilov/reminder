@@ -1,8 +1,11 @@
 #!/usr/bin/env python3
 import logging
 from flask import Flask
+from app.routes import bot
+
 
 app = Flask(__name__)
+app.register_blueprint(bot)
 
 
 if __name__ == "__main__":
@@ -15,4 +18,4 @@ if __name__ == "__main__":
     ch.setFormatter(formatter)
     logger.addHandler(ch)
 
-    app.run(host='10.8.54.139', port=88)
+    app.run(host='localhost', port=88)
