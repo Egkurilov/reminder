@@ -14,8 +14,13 @@ if __name__ == "__main__":
 
     ch = logging.StreamHandler()
     ch.setLevel(logging.DEBUG)
+
     formatter = logging.Formatter('%(asctime)s - %(name)s - %(levelname)s - %(message)s')
     ch.setFormatter(formatter)
     logger.addHandler(ch)
 
+    fh = logging.FileHandler(__name__)
+    fh.setLevel(logging.DEBUG)
+    fh.setFormatter(formatter)
+    logger.addHandler(fh)
     app.run(host='10.8.54.139', port=88, debug=True)
