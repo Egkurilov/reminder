@@ -10,6 +10,7 @@ logger = logging.getLogger(__name__)
 @bot.route("/bot", methods=['POST'])
 def bot_message():
     body = request.get_json()
+    print(body)
     message = Message(body)
     logger.debug(repr(message))
 
