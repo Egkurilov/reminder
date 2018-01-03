@@ -15,7 +15,7 @@ class Message:
 
     @property
     def message_id(self):
-        return self._data['message']['id']
+        return self._data['message']['from']['id']
 
     @property
     def from_id(self):
