@@ -1,13 +1,15 @@
-from flask import Flask, request
+from flask import Blueprint, request
 from .message import Message
 import logging
 
-app = Flask(__name__)
+bot = Blueprint('bot', __name__)
 logger = logging.getLogger(__name__)
 
 
-@app.route("/bot", methods=['GET', 'POST'])
+@bot.route("/bot", )
 def bot_message():
     body = request.get_json()
-    logger.debug(repr(body))
-    return Message(body)
+    logger.debug(str(body))
+    message = Message(body)
+    logger.debug(repr(message))
+    return message
