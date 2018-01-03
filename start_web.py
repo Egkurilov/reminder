@@ -18,4 +18,4 @@ if __name__ == "__main__":
     ch.setFormatter(formatter)
     logger.addHandler(ch)
 
-    app.run(host='localhost', port=88, debug=True)
+    app.run(host='0.0.0.0', port=88, debug=True)
