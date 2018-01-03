@@ -7,12 +7,10 @@ bot = Blueprint('bot', __name__)
 logger = logging.getLogger(__name__)
 
 
-@bot.route("/bot")
+@bot.route("/bot", methods=['POST'])
 def bot_message():
     body = request.get_json()
-    print(body)
-    #logger.debug(str(body))
-    #message = Message(body)
-    #logger.debug(repr(message))
+    message = Message(body)
+    logger.debug(repr(message))
 
     return jsonify(body)
