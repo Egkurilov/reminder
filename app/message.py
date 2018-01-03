@@ -1,8 +1,11 @@
-
 from datetime import datetime, timezone
+import json
 
 
 class Message:
+    attrs = ('id', 'message_id', 'from_id', 'from_id', 'is_bot', 'first_name',
+             'last_name', 'username', 'date', 'text')
+
     def __init__(self, data):
         self._data = data
 
@@ -43,3 +46,10 @@ class Message:
     def text(self):
         return self._data['message']['text']
 
+    def __repr__(self):
+        data = {
+            attr: getattr(self, attr)
+            for attr in self.attrs
+        }
+        data['date'] = data['date'].isoformat()
+        return json.dumps(data)
