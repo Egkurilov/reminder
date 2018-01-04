@@ -14,4 +14,4 @@ def bot_message():
     logger.debug(repr(message))
     return jsonify(body)
 
-    # TODO Добавить роутинг для ui 
+    # TODO Добавить роутинг для ui
