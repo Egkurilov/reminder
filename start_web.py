@@ -1,26 +1,15 @@
 #!/usr/bin/env python3
-import logging
+from logging.config import dictConfig
+import config
+
+dictConfig(config.logging)
+
 from flask import Flask
 from app.routes import bot
-
 
 app = Flask(__name__)
 app.register_blueprint(bot)
 
 
 if __name__ == "__main__":
-    logger = logging.getLogger(__name__)
-    logger.setLevel(logging.DEBUG)
-
-    ch = logging.StreamHandler()
-    ch.setLevel(logging.DEBUG)
-
-    formatter = logging.Formatter('%(asctime)s - %(name)s - %(levelname)s - %(message)s')
-    ch.setFormatter(formatter)
-    logger.addHandler(ch)
-
-    fh = logging.FileHandler(__name__)
-    fh.setLevel(logging.DEBUG)
-    fh.setFormatter(formatter)
-    logger.addHandler(fh)
-    app.run(host='10.8.54.139', port=88, debug=True)
+    app.run(host=config.host, port=config.port, debug=True)
