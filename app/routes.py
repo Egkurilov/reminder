@@ -1,4 +1,4 @@
-from flask import Blueprint, request
+from flask import Blueprint, request, app
 from .message import Message
 import logging
 
