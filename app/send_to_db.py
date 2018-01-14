@@ -1,5 +1,5 @@
 # TODO класс общения с БД
-from app import db
+from routes import db
 
 
 class Messagedb(db.Model):
