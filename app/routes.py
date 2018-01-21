@@ -1,12 +1,9 @@
-from flask import Blueprint, request, app, config
+from flask import Blueprint, request
 from .message import Message
 import logging
-from flask_sqlalchemy import SQLAlchemy
 
 bot = Blueprint('bot', __name__)
 logger = logging.getLogger(__name__)
-
-
 
 
 @bot.route("/bot", methods=['POST'])
