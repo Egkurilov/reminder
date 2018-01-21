@@ -3,7 +3,7 @@ port = 8008
 
 
 class Configuration(object):
-    SQLALCHEMY_DATABASE_URL = 'mysql+mysqlconnector:telegram:52ylRZBg4fLj' \
+    SQLALCHEMY_DATABASE_URI = 'mysql+mysqlconnector:telegram:52ylRZBg4fLj' \
                               '@localhost/telegram'
     DEBUG = True
     SQLALCHEMY_TRACK_MODIFICATIONS = False
